@@ -11,12 +11,12 @@ steps:
   inputs:
     versionSpec: '>= 2.5'
 
-#- script: |
-#    sudo apt-get install libsqlite3-dev
-#  displayName: 'install sqlite3 library'
+- script: |
+    sudo apt-get install libsqlite3-dev
+  displayName: 'install sqlite3 library'
 
-- script: gem install rails && rails -v
-  displayName: 'gem install rails'
+#- script: gem install rails && rails -v
+#  displayName: 'gem install rails'
 
 - script: |
     gem install bundler -v 1.16.4
