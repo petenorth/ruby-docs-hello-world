@@ -12,6 +12,10 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
+    apt-get install libsqlite3-dev
+  displayName: 'install sqlite3 library'
+  
+- script: |
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
