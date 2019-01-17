@@ -26,14 +26,9 @@ steps:
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4
   displayName: 'gem install bundler'
-  
-- script: gem install rspec
-  displayName: 'gem install rspec'
 
 - script: bundle exec rake
   displayName: 'bundle exec rake'
-
-- script: bundle exec rspec spec --format RspecJunitFormatter --out test_results/TEST-rspec.xml
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()
