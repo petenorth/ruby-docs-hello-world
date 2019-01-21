@@ -45,9 +45,9 @@ steps:
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
     
 - script: |
-    docker build -f Dockerfile -t $(dockerId)/$(imageName) .
+    docker build -f Dockerfile -t $(imageName) .
     docker login $(dockerRegistry) -u $(dockerId) -p $pswd
-    docker push $(dockerId)/$(imageName)
+    docker push $(dockerRegistry)/$(imageName)
   env:
     pswd: $(dockerPassword)
   displayName: 'Build and push Docker image'
